@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: 0 0 0;
+  --mist: 255 253 245;
+  --accent: 255 107 107;
+  --teal: 196 181 253;
+  --line: 0 0 0;
+  --secondary: 255 217 61;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: rgb(var(--mist));
+  color: rgb(var(--ink));
+  font-family: var(--font-space-grotesk), theme("fontFamily.sans");
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(#000 1.2px, transparent 1.2px),
+    linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 26px 26px, 52px 52px, 52px 52px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+  opacity: 0.35;
+}
+
+::selection {
+  background: rgba(255, 107, 107, 0.35);
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-8;
+  }
+
+  .section-title {
+    @apply text-5xl font-black uppercase tracking-tight text-ink md:text-7xl;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-14 items-center justify-center gap-2 border-4 border-black bg-[#FF6B6B] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-black transition duration-100 ease-linear active:translate-x-[4px] active:translate-y-[4px];
+    box-shadow: 8px 8px 0 0 #000;
+  }
+
+  .button-primary-dark {
+    @apply border-black bg-white text-black hover:bg-[#FFFDF5];
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-14 items-center justify-center border-4 border-black bg-[#FFD93D] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-black transition duration-100 ease-linear active:translate-x-[4px] active:translate-y-[4px];
+    box-shadow: 8px 8px 0 0 #000;
+  }
+
+  .detail-panel {
+    @apply flex items-start gap-4 border-4 border-black bg-white p-6;
+    box-shadow: 8px 8px 0 0 #000;
+  }
+
+  .detail-label {
+    @apply text-xs font-bold uppercase tracking-[0.18em] text-black;
+  }
+
+  .detail-value {
+    @apply mt-2 text-sm font-bold leading-7 text-black;
+  }
+
+  .highlight-strip {
+    @apply border-4 border-black p-8;
+    background: #fff;
+    box-shadow: 10px 10px 0 0 #000;
+  }
+
+  .neo-panel {
+    @apply border-4 border-black bg-white;
+    box-shadow: 10px 10px 0 0 #000;
+  }
+
+  .neo-panel-yellow {
+    @apply border-4 border-black bg-[#FFD93D];
+    box-shadow: 10px 10px 0 0 #000;
+  }
+
+  .neo-panel-red {
+    @apply border-4 border-black bg-[#FF6B6B];
+    box-shadow: 10px 10px 0 0 #000;
+  }
+
+  .neo-panel-violet {
+    @apply border-4 border-black bg-[#C4B5FD];
+    box-shadow: 10px 10px 0 0 #000;
+  }
+
+  .neo-panel-black {
+    @apply border-4 border-black bg-black text-white;
+    box-shadow: 10px 10px 0 0 #fff;
+  }
+
+  .sticker {
+    @apply inline-flex border-4 border-black px-4 py-2 text-sm font-black uppercase tracking-[0.18em];
+    box-shadow: 6px 6px 0 0 #000;
+  }
+
+  .neo-outline {
+    -webkit-text-stroke: 3px #000;
+    color: transparent;
+  }
+
+  .noise-card {
+    background-image: radial-gradient(#000 1.4px, transparent 1.4px);
+    background-size: 18px 18px;
+  }
+}
