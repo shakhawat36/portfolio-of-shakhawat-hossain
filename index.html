@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Shakhawat Hossain Portfolio</title>
+    <meta
+      name="description"
+      content="Launcher page for the Md. Shakhawat Hossain portfolio website."
+    />
+    <style>
+      :root {
+        --bg: #fffdf5;
+        --fg: #000000;
+        --accent: #ff6b6b;
+        --secondary: #ffd93d;
+        --muted: #c4b5fd;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Space Grotesk", Arial, sans-serif;
+        background:
+          radial-gradient(#000 1.2px, transparent 1.2px),
+          linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+          var(--bg);
+        background-size: 26px 26px, 52px 52px, 52px 52px, auto;
+        color: var(--fg);
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+
+      .panel {
+        border: 4px solid #000;
+        background: #fff;
+        box-shadow: 10px 10px 0 0 #000;
+      }
+
+      .sticker {
+        display: inline-block;
+        border: 4px solid #000;
+        box-shadow: 6px 6px 0 0 #000;
+        padding: 10px 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .hero {
+        display: grid;
+        gap: 28px;
+        margin-top: 24px;
+      }
+
+      @media (min-width: 900px) {
+        .hero {
+          grid-template-columns: 1.15fr 0.85fr;
+          align-items: start;
+        }
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(3rem, 9vw, 6.5rem);
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
+      .headline {
+        background: var(--secondary);
+        padding: 20px;
+        transform: rotate(-1deg);
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .button {
+        display: inline-block;
+        border: 4px solid #000;
+        box-shadow: 8px 8px 0 0 #000;
+        padding: 14px 20px;
+        text-decoration: none;
+        color: #000;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .button.primary {
+        background: var(--accent);
+      }
+
+      .button.secondary {
+        background: var(--secondary);
+      }
+
+      .side {
+        display: grid;
+        gap: 16px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .card.red {
+        background: var(--accent);
+      }
+
+      .card.yellow {
+        background: var(--secondary);
+      }
+
+      .card.violet {
+        background: var(--muted);
+      }
+
+      .small {
+        font-size: 0.88rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      code {
+        background: #fff;
+        border: 3px solid #000;
+        padding: 2px 8px;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <span class="sticker" style="background: var(--accent); transform: rotate(-2deg);">
+        Marketing Enthusiast
+      </span>
+
+      <div class="hero">
+        <div class="panel" style="padding: 28px;">
+          <h1>Md. Shakhawat Hossain</h1>
+          <div class="panel headline" style="margin-top: 20px; border-width: 4px;">
+            <p style="font-size: 1.35rem;">
+              This portfolio was built as a Next.js website and runs from the local dev server.
+            </p>
+          </div>
+
+          <div class="panel" style="padding: 20px; margin-top: 20px;">
+            <p>
+              Use the live local link below to open the full portfolio experience with
+              animations, project sections, and interactive components.
+            </p>
+          </div>
+
+          <div class="cta-row">
+            <a class="button primary" href="http://127.0.0.1:3000">Open Portfolio</a>
+            <a class="button secondary" href="./app/page.tsx">View Main Page Source</a>
+          </div>
+
+          <div class="panel" style="padding: 18px; margin-top: 24px; background: #fffdf5;">
+            <p class="small">Project type</p>
+            <p style="margin-top: 8px;">
+              Next.js app with Tailwind CSS, reusable components, and centralized content.
+            </p>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="panel card red" style="transform: rotate(-2deg);">
+            <p class="small">Live URL</p>
+            <p style="margin-top: 10px;">http://127.0.0.1:3000</p>
+          </div>
+
+          <div class="panel card yellow" style="transform: rotate(2deg);">
+            <p class="small">Run locally</p>
+            <p style="margin-top: 10px;"><code>npm run dev</code></p>
+          </div>
+
+          <div class="panel card violet" style="transform: rotate(-1deg);">
+            <p class="small">Main content file</p>
+            <p style="margin-top: 10px;"><code>content/site-content.ts</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
