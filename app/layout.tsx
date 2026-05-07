@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { siteContent } from "@/content/site-content";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
         {children}
+     <Analytics />
       </body>
     </html>
   );
